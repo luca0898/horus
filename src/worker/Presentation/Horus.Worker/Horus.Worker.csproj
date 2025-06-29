@@ -5,9 +5,20 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>dotnet-Horus.Worker-8918a684-134a-4251-833d-a79fa83ef217</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.22.1-Preview.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Application\Horus.Application\Horus.Application.csproj" />
+    <ProjectReference Include="..\..\Crosscutting\Horus.Crosscutting\Horus.Crosscutting.csproj" />
+    <ProjectReference Include="..\..\Domain\Horus.Domain\Horus.Domain.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Horus.Infra.Database\Horus.Infra.Database.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Horus.Infra.Messaging\Horus.Infra.Messaging.csproj" />
   </ItemGroup>
 </Project>

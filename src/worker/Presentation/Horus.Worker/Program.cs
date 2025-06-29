@@ -1,15 +1,18 @@
-namespace Horus.Worker
+using Horus.Infra.Database;
+
+namespace Horus.Worker;
+
+public class Program
 {
-    public class Program
+    public static void Main(string[] args)
     {
-        public static void Main(string[] args)
-        {
-            var builder = Host.CreateApplicationBuilder(args);
+        var builder = Host.CreateApplicationBuilder(args);
 
-            builder.Services.AddHostedService<Worker>();
+        builder.Services.AddDatabaseInfrastructure(builder.Configuration);
 
-            var host = builder.Build();
-            host.Run();
-        }
+        builder.Services.AddHostedService<Worker>();
+
+        var host = builder.Build();
+        host.Run();
     }
 }
