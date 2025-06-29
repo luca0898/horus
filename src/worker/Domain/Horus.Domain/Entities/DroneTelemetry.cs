@@ -2,10 +2,9 @@
 
 namespace Horus.Domain.Entities;
 
-public class DroneTelemetry
+public sealed class DroneTelemetry(string droneId, DateTime timestamp) : DroneTelemetryCompositeKey(droneId, timestamp)
 {
-    public required string DroneId { get; set; }
-    public DateTime Timestamp { get; set; }
+    public DroneTelemetryCompositeKey Key { get => new(DroneId, Timestamp); }
 
     private int _battery;
     public int Battery
