@@ -3,7 +3,8 @@
     "Horus.Worker": {
       "commandName": "Project",
       "environmentVariables": {
-        "DOTNET_ENVIRONMENT": "Development"
+        "DOTNET_ENVIRONMENT": "Development",
+        "ConnectionStrings:DefaultConnection": "Host=postgres;Port=5432;Database=horusdb;Username=horus;Password=horus123"
       },
       "dotnetRunMessages": true
     },

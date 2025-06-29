@@ -11,7 +11,7 @@ public static class DependencyInjection
     {
         services.AddDbContext<HorusApplicationDbContext>(options =>
         {
-            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"));
+            options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"), o => o.MigrationsAssembly("Horus.Infra.Database"));
 
             if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
                 options.EnableSensitiveDataLogging();

@@ -1,5 +1,5 @@
 ﻿namespace Horus.Infra.Database.EntityConfigurations;
-public class EntityConfiguration : IEntityTypeConfiguration<DroneTelemetry>
+public class DroneTelemetryConfiguration : IEntityTypeConfiguration<DroneTelemetry>
 {
     public void Configure(EntityTypeBuilder<DroneTelemetry> builder)
     {
